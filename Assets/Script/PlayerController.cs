@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour {
 	private float speed = 10; 
 
 	//minimum speed player can go
-	private float minSpeed = 5;
+	private float angle = 0;
 
 	//Max X and Y coordinate for Camera
 	private Vector2 cameraPos = new Vector2(6.43f,4.7f);
@@ -64,9 +64,16 @@ public class PlayerController : MonoBehaviour {
 		float fire = Input.GetAxis("Fire1");
 
 		if (fire > 0) {
-			speed = minSpeed;
-			Vector2 pos = new Vector2 (_transform.position.x, _transform.position.y + 1f);
-			Instantiate (prefab, pos, Quaternion.identity);
+			Vector2 pos = new Vector2 (_transform.position.x - 2f, _transform.position.y + 1f);
+			angle = 30f;
+			for (int i = 0; i < 3; i++) {
+				pos.x += 1f;
+
+				Instantiate (prefab, pos, Quaternion.Euler(0,0,angle));
+				angle -= 30f;
+			}
+
+
 		} else {
 			speed = 10f;
 		}

@@ -342,7 +342,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 1000011249194824, guid: f3079fd1bd4dc9e428ca9340ffc11cf8, type: 2}
-  speed: 10
 --- !u!50 &2010779024
 Rigidbody2D:
   serializedVersion: 2

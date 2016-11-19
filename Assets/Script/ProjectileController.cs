@@ -3,28 +3,31 @@ using System.Collections;
 
 public class ProjectileController : MonoBehaviour {
 
-	//vector 2 speed to control y movement of the object
-	Vector2 speed = new Vector2(0f, 0.5f);
+	//speed of the bullet
+	private float bulletSpeed = 15f;
 
 	//transform object
-	Transform _transform;
+	private Transform _transform;
 
-	//current position
-	Vector2 _currentPosition;
+	//RigidBody of gameobject
+	private Rigidbody2D rigid;
+
 
 	// Use this for initialization
 	void Start () {
-		_transform = gameObject.transform;
-		_currentPosition = _transform.position;
+		_transform = this.gameObject.transform;
+		rigid = this.gameObject.GetComponent<Rigidbody2D> ();
+
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
 
-		//adds y coordinate to current position
-		_currentPosition += speed;
-		//over writes object position with current position
-		_transform.position = _currentPosition;
+		Vector3 movement = new Vector3 (0f, bulletSpeed, 0f);
+		//movement = movement + _transform.forward;
+		//rigid.velocity = movement;
+		rigid.velocity = bulletSpeed * _transform.up;
+
 	}
 
 	void Update(){
