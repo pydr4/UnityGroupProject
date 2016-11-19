@@ -2,17 +2,22 @@
 using System.Collections;
 
 public class PlayerController : MonoBehaviour {
-
-	//speed of the object, can also be set through unity property
 	[SerializeField]
-	private float speed = 0; 
+	private GameObject prefab = null;
+
+	//speed of the player object
+	private float speed = 10; 
+
+	//minimum speed player can go
+	private float minSpeed = 5;
 
 	//Max X and Y coordinate for Camera
 	private Vector2 cameraPos = new Vector2(6.43f,4.7f);
 
 	//player location
 	private Transform _transform;
-	//
+
+	//rigid body of the player
 	private Rigidbody2D rigid;
 
 	// Use this for initialization
@@ -53,6 +58,18 @@ public class PlayerController : MonoBehaviour {
 
 		//sets the speed of the player object
 		rigid.velocity = movement;
-	    
+	}
+
+	void Update(){
+		float fire = Input.GetAxis("Fire1");
+
+		if (fire > 0) {
+			speed = minSpeed;
+			Vector2 pos = new Vector2 (_transform.position.x, _transform.position.y + 1f);
+			Instantiate (prefab, pos, Quaternion.identity);
+		} else {
+			speed = 10f;
+		}
+	
 	}
 }
