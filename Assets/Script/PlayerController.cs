@@ -2,6 +2,12 @@
 using System.Collections;
 
 public class PlayerController : MonoBehaviour {
+
+	//variable to store time
+	private float time = 0f;
+	//time delay constant to store delay in between shots
+	private const float timeDelay = 0.25f;
+
 	[SerializeField]
 	private GameObject prefab = null;
 
@@ -61,21 +67,38 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void Update(){
+		//if fire is greater than 0, fire button is pressed
 		float fire = Input.GetAxis("Fire1");
 
-		if (fire > 0) {
-			Vector2 pos = new Vector2 (_transform.position.x - 2f, _transform.position.y + 1f);
-			angle = 30f;
-			for (int i = 0; i < 3; i++) {
-				pos.x += 1f;
 
-				Instantiate (prefab, pos, Quaternion.Euler(0,0,angle));
-				angle -= 30f;
-			}
+		if (Time.time >= time && fire > 0) 
+		//checks if the fire button is pressed and player can shoot
+		{
+			//slows player while its shooting
+			speed = 5f;
+			Shoot ();
 
+			//introduces delay till next shot
+			time = Time.time + timeDelay;
 
 		} else {
 			speed = 10f;
+		}
+	
+	}
+
+	void Shoot()
+	//instantiates 3 bullet prefab and instantiate its location to player position
+	//3 bullets are angled 30, 0, -30 degree to shoot 3 ways
+	{
+		//creates position of the bullet object
+		Vector2 pos = new Vector2 (_transform.position.x, _transform.position.y + 1f);
+		//initial angle of bullet
+		angle = 30f;
+		for (int i = 0; i < 3; i++) {
+			//creates 3 bullet object each angles shift by -30 degree from 30 degree
+			Instantiate (prefab, pos, Quaternion.Euler(0,0,angle));
+			angle -= 30f;
 		}
 	
 	}
