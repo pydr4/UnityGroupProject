@@ -6,7 +6,14 @@ public class EnemySSController : MonoBehaviour {
 	[SerializeField]
 	private float speed = 0.2f;
 
+	[SerializeField]
+	private GameObject tanmu;
+
 	private Transform _transform;
+
+	private float rotai = 0f;
+
+	private Transform tanmuSpawn;
 
 	private	Vector2 _currentPos;
 
@@ -28,7 +35,9 @@ public class EnemySSController : MonoBehaviour {
 			if (_transform.position.y < 1f) {
 				_currentPos.y= 1f;
 				_transform.position = _currentPos;
+				Tanmu ();
 			}
+
 			timing++;
 		}else{
 			
@@ -37,7 +46,18 @@ public class EnemySSController : MonoBehaviour {
 	}
 
 	void Tanmu(){
-		
+		tanmuSpawn = gameObject.transform;
+		float rad = 0;
+
+		for (int i = 0; i < 4; i++) {
+			GameObject _tanmu = (GameObject)Instantiate (tanmu, tanmuSpawn.position, Quaternion.Euler (0, 0, rotai+rad));
+
+			_tanmu.GetComponent<Rigidbody2D> ().velocity = _tanmu.transform.up * -5f;
+
+			Destroy (_tanmu, 3.0f);
+
+			rad += 90f;
+		}rotai += 25f;
 	}
 
 }

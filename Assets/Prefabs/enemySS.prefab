@@ -115,6 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.2
+  tanmu: {fileID: 1000010662533550, guid: 032e3847e970ad148a92c98a1d4bb5af, type: 2}
 --- !u!212 &212000010707213848
 SpriteRenderer:
   m_ObjectHideFlags: 1

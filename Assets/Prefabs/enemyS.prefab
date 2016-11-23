@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1677b4247f4efd647a02a5cf14982971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.2
+  speed: 0.1
   tanmu: {fileID: 1000010662533550, guid: 032e3847e970ad148a92c98a1d4bb5af, type: 2}
   player: {fileID: 0}
 --- !u!212 &212000013430489556

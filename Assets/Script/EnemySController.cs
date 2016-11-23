@@ -22,7 +22,7 @@ public class EnemySController : MonoBehaviour {
 	void Start () {
 		_transform = gameObject.transform;
 		_currentPos = _transform.position;
-		InvokeRepeating ("Fire", 0.01f, 0.01f);
+		InvokeRepeating ("Fire", 0.01f, 0.6f);
 	}
 	
 	// Update is called once per frame
@@ -42,13 +42,13 @@ public class EnemySController : MonoBehaviour {
 		tanmuSpawn = gameObject.transform;
 
 
-		GameObject _tanmu = (GameObject)Instantiate (tanmu, tanmuSpawn.position, Quaternion.Euler (0, 0, rotai));
+		GameObject _tanmu = (GameObject)Instantiate (tanmu, tanmuSpawn.position, Quaternion.Euler (0, 0, 0));
 
 
-		_tanmu.GetComponent<Rigidbody2D> ().velocity = _tanmu.transform.up * -5f;
+		_tanmu.GetComponent<Rigidbody2D> ().velocity = _tanmu.transform.up * -20f;
 
 		Destroy (_tanmu, 3.0f);
 		
-		rotai+= 10f;
+
 	}
 }
