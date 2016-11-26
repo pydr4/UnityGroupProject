@@ -999,7 +999,8 @@ GameObject:
   - 212: {fileID: 2010779025}
   - 50: {fileID: 2010779024}
   - 114: {fileID: 2010779023}
-  - 60: {fileID: 2010779022}
+  - 58: {fileID: 2010779022}
+  - 114: {fileID: 2010779027}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1007,8 +1008,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!60 &2010779022
-PolygonCollider2D:
+--- !u!58 &2010779022
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -1018,37 +1019,9 @@ PolygonCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  m_Points:
-    m_Paths:
-    - - {x: 0.1954058, y: -0.022925174}
-      - {x: 0.11868134, y: 0.025545975}
-      - {x: 0.08903335, y: 0.104633324}
-      - {x: 0.07978943, y: 0.2232865}
-      - {x: 0.06992981, y: 0.2432163}
-      - {x: 0.046419982, y: 0.21305744}
-      - {x: -0.0027950853, y: 0.24321635}
-      - {x: -0.03339743, y: 0.2181816}
-      - {x: -0.07964897, y: 0.24335672}
-      - {x: -0.08728963, y: 0.15441373}
-      - {x: -0.08636248, y: 0.043216318}
-      - {x: -0.16838206, y: -0.0015980843}
-      - {x: -0.2131462, y: -0.05349713}
-      - {x: -0.22657312, y: -0.09328654}
-      - {x: -0.1931462, y: -0.10643269}
-      - {x: -0.09109724, y: -0.039989114}
-      - {x: -0.084534585, y: -0.12664929}
-      - {x: -0.12419252, y: -0.18053113}
-      - {x: -0.11363759, y: -0.21300574}
-      - {x: -0.08960988, y: -0.23856279}
-      - {x: -0.025091477, y: -0.22945306}
-      - {x: 0.030501883, y: -0.22706485}
-      - {x: 0.09664316, y: -0.24321632}
-      - {x: 0.12978943, y: -0.21}
-      - {x: 0.10530313, y: -0.09796955}
-      - {x: 0.107203074, y: -0.07169207}
-      - {x: 0.20532452, y: -0.10229138}
-      - {x: 0.23234043, y: -0.08545955}
+  m_Offset: {x: 0, y: 0.15}
+  serializedVersion: 2
+  m_Radius: 0.041244145
 --- !u!114 &2010779023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1118,12 +1091,23 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2010779021}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.408, y: 0.06, z: 0}
+  m_LocalPosition: {x: 0.408, y: -0.02, z: 0}
   m_LocalScale: {x: 2.5686269, y: 2.0715723, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+--- !u!114 &2010779027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2010779021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86696f9588142b84594c0a0c96dc1092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2073393094
 GameObject:
   m_ObjectHideFlags: 0

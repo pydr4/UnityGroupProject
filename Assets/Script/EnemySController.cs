@@ -7,6 +7,7 @@ public class EnemySController : MonoBehaviour {
 
 	[SerializeField]
 	private GameObject tanmu;
+
 	[SerializeField]
 	private GameObject player;
 
@@ -17,6 +18,7 @@ public class EnemySController : MonoBehaviour {
 	private Transform _transform;
 
 	private	Vector2 _currentPos;
+
 
 	// Use this for initialization
 	void Start () {
