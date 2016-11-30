@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemySSController : MonoBehaviour {
+public class EnemySSSController : MonoBehaviour {
 
 	[SerializeField]
 	private float speed = 0.2f;
@@ -26,7 +26,7 @@ public class EnemySSController : MonoBehaviour {
 		_currentPos = _transform.position;
 		InvokeRepeating("Tanmu",0.5f, 0.1f);
 	}
-		
+
 	// Update is called once per frame
 	void FixedUpdate () {
 		_currentPos = _transform.position;
@@ -54,15 +54,15 @@ public class EnemySSController : MonoBehaviour {
 		float rad = 0;
 		shoot++;
 		if(shoot < 10){
-		for (int i = 0; i < 4; i++) {
-			GameObject _tanmu = (GameObject)Instantiate (tanmu, tanmuSpawn.position, Quaternion.Euler (0, 0, rotai+rad));
+			for (int i = 0; i < 4; i++) {
+				GameObject _tanmu = (GameObject)Instantiate (tanmu, tanmuSpawn.position, Quaternion.Euler (0, 0, rotai+rad));
 
-			_tanmu.GetComponent<Rigidbody2D> ().velocity = _tanmu.transform.up * -5f;
+				_tanmu.GetComponent<Rigidbody2D> ().velocity = _tanmu.transform.up * -5f;
 
-			Destroy (_tanmu, 3.0f);
+				Destroy (_tanmu, 3.0f);
 
-			rad += 90f;
-		}rotai += 25f;
+				rad += 90f;
+			}rotai += 25f;
 		}
 	}
 
