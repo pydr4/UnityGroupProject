@@ -17,12 +17,14 @@ public class EnemySSController : MonoBehaviour {
 
 	private	Vector2 _currentPos;
 
-	private int timing = 0; 
+	private int timing = 0;
+
+	private int shoot = 0;
 	// Use this for initialization
 	void Start () {
 		_transform = gameObject.transform;
 		_currentPos = _transform.position;
-
+		InvokeRepeating("Tanmu",0.5f, 0.1f);
 	}
 		
 	// Update is called once per frame
@@ -35,7 +37,7 @@ public class EnemySSController : MonoBehaviour {
 			if (_transform.position.y < 1f) {
 				_currentPos.y= 1f;
 				_transform.position = _currentPos;
-				Tanmu ();
+
 			}
 
 			timing++;
@@ -48,7 +50,8 @@ public class EnemySSController : MonoBehaviour {
 	void Tanmu(){
 		tanmuSpawn = gameObject.transform;
 		float rad = 0;
-
+		shoot++;
+		if(shoot < 10){
 		for (int i = 0; i < 4; i++) {
 			GameObject _tanmu = (GameObject)Instantiate (tanmu, tanmuSpawn.position, Quaternion.Euler (0, 0, rotai+rad));
 
@@ -58,6 +61,7 @@ public class EnemySSController : MonoBehaviour {
 
 			rad += 90f;
 		}rotai += 25f;
+		}
 	}
 
 }

@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour {
 	//variable to store time
 	private float time = 0f;
 	//time delay constant to store delay in between shots
-	private const float timeDelay = 0.25f;
+	private const float timeDelay = 0.2f;
 
 	[SerializeField]
 	private GameObject prefab = null;
