@@ -5,6 +5,8 @@ public class EnemyHealth : MonoBehaviour {
 	[SerializeField]
 	GameObject explosion = null;
 
+	private int points = 0;
+
 	[SerializeField]
 	private int health = 20;
 
@@ -16,8 +18,14 @@ public class EnemyHealth : MonoBehaviour {
 		}
 	}
 		
+
+	void Start(){
+		points = health * 10;
+	}
+
 	void FixedUpdate () {
 		if (health <= 0) {
+			Player.Instance.Points += points;
 			Transform expl = explosion.transform;
 			expl.position = gameObject.transform.position;
 			Instantiate (explosion);
