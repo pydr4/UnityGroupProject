@@ -11,8 +11,6 @@ public class EnemySSSController : MonoBehaviour {
 
 	private Transform _transform;
 
-	private float rotai = 0f;
-
 	private Transform tanmuSpawn;
 
 	private	Vector2 _currentPos;
@@ -20,6 +18,10 @@ public class EnemySSSController : MonoBehaviour {
 	private int timing = 0;
 
 	private int shoot = 0;
+
+
+
+
 	// Use this for initialization
 	void Start () {
 		_transform = gameObject.transform;
@@ -46,6 +48,11 @@ public class EnemySSSController : MonoBehaviour {
 			Destroy (gameObject);
 		}
 
+		//trace player and face it
+		//Vector3 dir = player.transform.position - _transform.position;
+		//float angle = Mathf.Atan2(dir.x,dir.y) * Mathf.Rad2Deg;
+		//_transform.rotation = Quaternion.AngleAxis(angle, -Vector3.forward);
+
 
 	}
 
@@ -54,15 +61,13 @@ public class EnemySSSController : MonoBehaviour {
 		float rad = 0;
 		shoot++;
 		if(shoot < 10){
-			for (int i = 0; i < 4; i++) {
-				GameObject _tanmu = (GameObject)Instantiate (tanmu, tanmuSpawn.position, Quaternion.Euler (0, 0, rotai+rad));
-
-				_tanmu.GetComponent<Rigidbody2D> ().velocity = _tanmu.transform.up * -5f;
-
+			for (int i =0; i < 10; i++) {
+				GameObject _tanmu = (GameObject)Instantiate (tanmu, tanmuSpawn.position, Quaternion.Euler (0, 0, -rad));
+				_tanmu.GetComponent<Rigidbody2D> ().velocity = _tanmu.transform.up * 5f;
 				Destroy (_tanmu, 3.0f);
 
-				rad += 90f;
-			}rotai += 25f;
+				rad += 36f;
+			};
 		}
 	}
 
