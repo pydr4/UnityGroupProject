@@ -21,6 +21,9 @@ GameObject:
   - 4: {fileID: 4000013791694406}
   - 212: {fileID: 212000011812619024}
   - 114: {fileID: 114000010667542924}
+  - 114: {fileID: 114000011354878604}
+  - 114: {fileID: 114000011323535896}
+  - 60: {fileID: 60000010438737254}
   m_Layer: 0
   m_Name: enemySSS
   m_TagString: Untagged
@@ -41,6 +44,74 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!60 &60000010438737254
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011525112402}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: 0.68, y: -0.65999997}
+      - {x: 0.82, y: -1.09}
+      - {x: 0.87, y: -1.12}
+      - {x: 0.90999997, y: -1.05}
+      - {x: 0.90999997, y: 0.26999998}
+      - {x: 0.88, y: 0.52}
+      - {x: 0.84999996, y: 0.71999997}
+      - {x: 0.72999996, y: 0.88}
+      - {x: 0.7, y: 0.84999996}
+      - {x: 0.69, y: 0.48999998}
+      - {x: 0.53, y: 0.47}
+      - {x: 0.55, y: 0.53}
+      - {x: 0.55, y: 0.71}
+      - {x: 0.53, y: 0.87}
+      - {x: 0.48, y: 0.96999997}
+      - {x: 0.35, y: 1.24}
+      - {x: 0.29, y: 1.24}
+      - {x: 0.29, y: 0.82}
+      - {x: 0.25, y: 0.78}
+      - {x: 0.25, y: 0.52}
+      - {x: 0.26999998, y: 0.47}
+      - {x: 0.28, y: 0.29}
+      - {x: 0.19, y: 0.53999996}
+      - {x: 0.14999999, y: 0.59}
+      - {x: 0.04, y: 0.75}
+      - {x: -0.099999994, y: 0.68}
+      - {x: -0.21, y: 0.52}
+      - {x: -0.28, y: 0.29}
+      - {x: -0.24, y: 0.52}
+      - {x: -0.25, y: 0.78}
+      - {x: -0.29, y: 0.82}
+      - {x: -0.29, y: 1.24}
+      - {x: -0.35999998, y: 1.24}
+      - {x: -0.45, y: 1.0699999}
+      - {x: -0.58, y: 0.71999997}
+      - {x: -0.55, y: 0.34}
+      - {x: -0.66999996, y: 0.42}
+      - {x: -0.69, y: 0.84999996}
+      - {x: -0.74, y: 0.87}
+      - {x: -0.81, y: 0.78}
+      - {x: -0.90999997, y: 0.37}
+      - {x: -0.90999997, y: -1.02}
+      - {x: -0.9, y: -1.06}
+      - {x: -0.87, y: -1.11}
+      - {x: -0.81, y: -1.09}
+      - {x: -0.68, y: -0.65999997}
+      - {x: -0.42999998, y: -0.75}
+      - {x: -0.39, y: -1.0699999}
+      - {x: -0.32999998, y: -1.09}
+      - {x: -0.32, y: -1.24}
+      - {x: 0.32, y: -1.24}
+      - {x: 0.39, y: -1.0699999}
+      - {x: 0.39999998, y: -0.83}
+      - {x: 0.53999996, y: -0.66999996}
 --- !u!114 &114000010667542924
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -54,6 +125,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.5
   tanmu: {fileID: 1000010931225680, guid: 42f008199f5afcf489e3717ac6b9445b, type: 2}
+--- !u!114 &114000011323535896
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011525112402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10dd8fabc46ec51408cf81f717bfc650, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114000011354878604
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011525112402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69fc58abe104ccc48a0cd70172fb6db5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 1000013237329476, guid: bed092998b310104685533c33dcd6298, type: 2}
+  health: 60
 --- !u!212 &212000011812619024
 SpriteRenderer:
   m_ObjectHideFlags: 1
