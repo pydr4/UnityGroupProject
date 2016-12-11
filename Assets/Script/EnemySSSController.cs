@@ -1,6 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+/*
+ * Title: Amazing Space Shooter
+ * Group: #6
+ * 
+ * Members: 
+ * <Makoto Wilson - 100810278>
+ * <Jierong Fan   - 100986919>
+ * 
+ * Course: Game Development
+ * 
+ * Date: 12/11/2016
+*/
 public class EnemySSSController : MonoBehaviour {
 
 	[SerializeField]
@@ -26,7 +37,7 @@ public class EnemySSSController : MonoBehaviour {
 	void Start () {
 		_transform = gameObject.transform;
 		_currentPos = _transform.position;
-		InvokeRepeating("Tanmu",0.5f, 0.1f);
+		InvokeRepeating("Tanmu",0.5f, 0.5f);
 	}
 
 	// Update is called once per frame
@@ -39,7 +50,6 @@ public class EnemySSSController : MonoBehaviour {
 			if (_transform.position.y < 1f) {
 				_currentPos.y= 1f;
 				_transform.position = _currentPos;
-
 			}
 
 			timing++;
@@ -61,9 +71,9 @@ public class EnemySSSController : MonoBehaviour {
 		float rad = 0;
 		shoot++;
 		if(shoot < 10){
-			for (int i =0; i < 10; i++) {
-				GameObject _tanmu = (GameObject)Instantiate (tanmu, tanmuSpawn.position, Quaternion.Euler (0, 0, -rad));
-				_tanmu.GetComponent<Rigidbody2D> ().velocity = _tanmu.transform.up * 5f;
+			for (int i =0; i < 5; i++) {
+				GameObject _tanmu = (GameObject)Instantiate (tanmu, tanmuSpawn.position, Quaternion.Euler (0, 0, rad));
+				//_tanmu.GetComponent<Rigidbody2D> ().velocity = _tanmu.transform.up * 5f;
 				Destroy (_tanmu, 3.0f);
 
 				rad += 36f;
